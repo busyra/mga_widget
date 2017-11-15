@@ -13,12 +13,13 @@ function validateName() {
     var name = document.forms["ciForm"]["name"].value;
     var div = document.createElement("div");
     if (name == "") {
-      document.getElementById('name').style.background = "red";
-      document.getElementById('name').style.borderColor = "red";
+      document.getElementById('name').style.background = "#ffe3df";
+      document.getElementById('name').style.borderColor = "#ee4647";
 
       if(document.getElementsByClassName("nameError").length < 1){
         div.className= "nameError"
-        div.style.color = "red";
+        div.style.color = "#ee4647";
+        div.style.float ="right";
         div.innerHTML = "Full Name is a required field.";
         document.getElementById("nameInput").appendChild(div);
       }
@@ -27,7 +28,7 @@ function validateName() {
     }
     else{
       document.getElementById('name').style.background = "white";
-      document.getElementById('name').style.borderColor = "white";
+      document.getElementById('name').style.borderColor = "lightgrey";
       $('.nameError').remove();
       return true
     }
@@ -38,11 +39,12 @@ function validatePhone() {
     var phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
     var div = document.createElement("div");
     if (phone == "") {
-      document.getElementById('phone').style.background = "red";
-      document.getElementById('phone').style.borderColor = "red";
+      document.getElementById('phone').style.background = "#ffe3df";
+      document.getElementById('phone').style.borderColor = "#ee4647";
       if(document.getElementsByClassName("phoneError").length < 1){
         div.className= "phoneError"
-        div.style.color = "red";
+        div.style.color = "#ee4647";
+        div.style.float ="right";
         div.innerHTML = "Mobile number is a required field.";
         document.getElementById("phoneInput").appendChild(div);
       }
@@ -50,11 +52,12 @@ function validatePhone() {
       return false;
     }
     else if (!RegExp(phoneRegex).test(phone)){
-      document.getElementById('phone').style.background = "red";
-      document.getElementById('phone').style.borderColor = "red";
+      document.getElementById('phone').style.background = "#ffe3df";
+      document.getElementById('phone').style.borderColor = "#ee4647";
       if(document.getElementsByClassName("phoneError2").length < 1){
         div.className= "phoneError2"
-        div.style.color = "red";
+        div.style.color = "#ee4647";
+        div.style.float ="right";
         div.innerHTML = "Please enter valid number.";
         $('.phoneError').remove();
         document.getElementById("phoneInput").appendChild(div);
@@ -63,7 +66,7 @@ function validatePhone() {
     }
     else {
       document.getElementById('phone').style.background = "white";
-      document.getElementById('phone').style.borderColor = "white";
+      document.getElementById('phone').style.borderColor = "lightgrey";
       $('.phoneError').remove();
       $('.phoneError2').remove();
       return true
@@ -75,11 +78,12 @@ function validateQuestion() {
     var question = document.forms["ciForm"]["question"].value;
     var div = document.createElement("div");
     if (question == "") {
-      document.getElementById('question').style.background = "red";
-      document.getElementById('question').style.borderColor = "red";
+      document.getElementById('question').style.background = "#ffe3df";
+      document.getElementById('question').style.borderColor = "#ee4647";
       if(document.getElementsByClassName("questionError").length < 1){
         div.className= "questionError"
-        div.style.color = "red";
+        div.style.color = "#ee4647";
+        div.style.float ="right";
         div.innerHTML = "Description is a required field.";
         document.getElementById("questionInput").appendChild(div);
       }
@@ -87,7 +91,7 @@ function validateQuestion() {
     }
     else {
       document.getElementById('question').style.background = "white";
-      document.getElementById('question').style.borderColor = "white";
+      document.getElementById('question').style.borderColor = "lightgrey";
       $('.questionError').remove();
       return true
     }
@@ -97,10 +101,11 @@ function validateState() {
     var state = document.forms["ciForm"]["state"].value;
     var div = document.createElement("div");
     if (state == "selectone") {
-      document.getElementById('state').style.background = "red";
+      document.getElementById('state').style.background = "#ffe3df";
       if(document.getElementsByClassName("stateError").length < 1){
         div.className= "stateError"
-        div.style.color = "red";
+        div.style.color = "#ee4647";
+        div.style.float ="right";
         div.innerHTML = "State is a required field.";
         document.getElementById("stateInput").appendChild(div);
       }
@@ -123,10 +128,10 @@ function validatePurchase() {
     var purchase = document.forms["ciForm"]["purchase"].value;
     var div = document.createElement("div");
     if (purchase == "selectone") {
-      document.getElementById('purchase').style.background = "red";
+      document.getElementById('purchase').style.background = "#ffe3df";
       if(document.getElementsByClassName("purchaseError").length < 1){
         div.className= "purchaseError"
-        div.style.color = "red";
+        div.style.color = "#ffe3df";
         div.innerHTML = "Selection required field.";
         document.getElementById("purchaseInput").appendChild(div);
       }
