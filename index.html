@@ -4,16 +4,25 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="css/styles.css">
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/script.js"></script>
   </head>
   <body>
     <p>Please fill out the following fields to contact MGA Entertainment</p>
-    <form id=ciForm action = "success.html"  method="post">
-      Full name:*<br>
-      <input type=”text” name="name" id=name ><br>
-      Mobile Phone Number:*<br>
-      <input type=”text” name="phone" id=phone ><br>
-      State:*<br>
+    <form id=ciForm action = "success.html" onsubmit="return !!(validateName() &
+     validatePhone());" method="post">
+     <div id="nameInput">
+       Full name:*<br>
+       <input type=”text” name="name" id=name placeholder="John Doe"><br>
+     </div>
+     <div id="phoneInput">
+       Mobile Phone Number:*<br>
+       <input type=”text” name="phone" id=phone placeholder="ex: 123-123-1234"><br>
+     </div>
+
       <select name="state" id=state >
         <option value="selectone" selected>Select one</option>
         <option value="california">California</option>
