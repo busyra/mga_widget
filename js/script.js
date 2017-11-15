@@ -102,6 +102,7 @@ function validateState() {
     var div = document.createElement("div");
     if (state == "selectone") {
       document.getElementById('state').style.background = "#ffe3df";
+      document.getElementById('state').style.borderColor = "#ee4647";
       if(document.getElementsByClassName("stateError").length < 1){
         div.className= "stateError"
         div.style.color = "#ee4647";
@@ -114,11 +115,13 @@ function validateState() {
     else if (state == "california"){
       validatePurchase()
       document.getElementById('state').style.background = "white";
+      document.getElementById('state').style.borderColor = "lightgrey";
       $('.stateError').remove();
       return true;
     }
     else {
       document.getElementById('state').style.background = "white";
+      document.getElementById('state').style.borderColor = "lightgrey";
       $('.stateError').remove();
       return true
     }
@@ -129,9 +132,10 @@ function validatePurchase() {
     var div = document.createElement("div");
     if (purchase == "selectone") {
       document.getElementById('purchase').style.background = "#ffe3df";
+      document.getElementById('state').style.borderColor = "#ee4647";
       if(document.getElementsByClassName("purchaseError").length < 1){
         div.className= "purchaseError"
-        div.style.color = "#ffe3df";
+        div.style.color = "#ee4647";
         div.innerHTML = "Selection required field.";
         document.getElementById("purchaseInput").appendChild(div);
       }
