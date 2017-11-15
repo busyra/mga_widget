@@ -1,3 +1,14 @@
+$(document).ready(function(){
+  $("#hide").hide();
+  $('#state').change(function () {
+    if ($('option:selected', this).val() == "california") {
+      $("#hide").show();
+    } else {
+      $("#hide").hide();
+    }
+  });
+});
+
 function validateName() {
     var name = document.forms["ciForm"]["name"].value;
     var div = document.createElement("div");
@@ -79,5 +90,52 @@ function validateQuestion() {
       document.getElementById('question').style.borderColor = "white";
       $('.questionError').remove();
       return true
+    }
+}
+
+function validateState() {
+    var state = document.forms["ciForm"]["state"].value;
+    var div = document.createElement("div");
+    if (state == "selectone") {
+      document.getElementById('state').style.background = "red";
+      if(document.getElementsByClassName("stateError").length < 1){
+        div.className= "stateError"
+        div.style.color = "red";
+        div.innerHTML = "State is a required field.";
+        document.getElementById("stateInput").appendChild(div);
+      }
+      return false;
+    }
+    else if (state == "california"){
+      validatePurchase()
+      document.getElementById('state').style.background = "white";
+      $('.stateError').remove();
+      return true;
+    }
+    else {
+      document.getElementById('state').style.background = "white";
+      $('.stateError').remove();
+      return true
+    }
+}
+
+function validatePurchase() {
+    var purchase = document.forms["ciForm"]["purchase"].value;
+    var div = document.createElement("div");
+    if (purchase == "selectone") {
+      document.getElementById('purchase').style.background = "red";
+      if(document.getElementsByClassName("purchaseError").length < 1){
+        div.className= "purchaseError"
+        div.style.color = "red";
+        div.innerHTML = "Selection required field.";
+        document.getElementById("purchaseInput").appendChild(div);
+      }
+      return false;
+    }
+    else {
+      document.getElementById('purchase').style.background = "white";
+      $('.purchaseError').remove();
+      return true
+
     }
 }
