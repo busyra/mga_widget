@@ -13,7 +13,7 @@
   <body>
     <p>Please fill out the following fields to contact MGA Entertainment</p>
     <form id=ciForm action = "success.html" onsubmit="return !!(validateName() &
-     validatePhone());" method="post">
+     validatePhone() & validateQuestion());" method="post">
      <div id="nameInput">
        Full name:*<br>
        <input type=”text” name="name" id=name placeholder="John Doe"><br>
@@ -29,8 +29,12 @@
         <option value="washington">Washington</option>
         <option value="oregon">Oregon</option>
       </select><br>
-      Describe your question:*<br>
-      <input type=”text” name="question" id=question ><br>
+
+      <div id="questionInput">
+        Describe your question:*<br>
+        <input type=”text” name="question" id=question ><br>
+      </div>
+
       <input type="submit" value="Submit">
     </form>
   </body>

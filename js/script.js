@@ -59,3 +59,25 @@ function validatePhone() {
     }
 
 }
+
+function validateQuestion() {
+    var question = document.forms["ciForm"]["question"].value;
+    var div = document.createElement("div");
+    if (question == "") {
+      document.getElementById('question').style.background = "red";
+      document.getElementById('question').style.borderColor = "red";
+      if(document.getElementsByClassName("questionError").length < 1){
+        div.className= "questionError"
+        div.style.color = "red";
+        div.innerHTML = "Description is a required field.";
+        document.getElementById("questionInput").appendChild(div);
+      }
+      return false;
+    }
+    else {
+      document.getElementById('question').style.background = "white";
+      document.getElementById('question').style.borderColor = "white";
+      $('.questionError').remove();
+      return true
+    }
+}
