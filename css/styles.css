@@ -26,8 +26,8 @@ header {
 
 input[type=text], select {
     width: 100%;
-    height: 34px;
-    padding: 8px 20px;
+    height: 30px;
+    padding-left: 30px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -36,15 +36,21 @@ input[type=text], select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background:
 }
+
+input[name=name]{
+  background: url("../assets/name_icon.png") no-repeat left center;
+}
+input[name=phone]{
+  background: url("../assets/phone_icon.png") no-repeat left center;
+}
+input[name=question]{
+height: 100px;}
 
 .formInput{
   padding-top: 25px;
 }
-.tallText{
- height: 100px !important;
-}
+
 
 .container {
   padding: 15px 15px 15px 15px;
@@ -62,4 +68,23 @@ input[type=text], select {
   text-align: center;
   color: white;
   background-image: linear-gradient(263deg, #03adef, #0184b9);
+}
+
+.float-right {
+  float: right;
+}
+
+.brand {
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  margin-left: 35%;
+  position:absolute;
+  background-image: url("../assets/mga_logo.png");
+  background-size: cover;
+  display: block;
+}
+
+.padding-top{
+  padding-top: 40px;
 }
